@@ -22,7 +22,7 @@ macro help(f)
     # We remove that comment and just keep the macro name.
     local f_str = chopprefix(string(f), r"#= .+ =# ")
     ex_out = quote
-        # We do not need to verify if we are in a interactive environment because this mode is
+        # We do not need to verify if we are in an interactive environment because this mode is
         # only accessible through pager mode, which already checks it.
         try
             $TerminalPager.pager($TerminalPager._get_help($f_str); use_alternate_screen_buffer = true)

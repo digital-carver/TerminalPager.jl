@@ -5,7 +5,7 @@
 ############################################################################################
 
 """
-    _help!(pargerd::Pager) -> Nothing
+    _help!(pagerd::Pager) -> Nothing
 
 Open a new pager with the help.
 """
@@ -75,8 +75,8 @@ function _help!(pagerd::Pager)
 """
   $(_cb)TerminalPager.jl $(PKG_VERSION)$(_d)
 
-  The pager can execute some type of actions as shown in the following. The key bindings of
-  each actions can be changed using the function $(_c)set_keybinding$(_d).
+  The pager can execute some types of actions as shown in the following. The key bindings of
+  each action can be changed using the function $(_c)set_keybinding$(_d).
 
   Some actions are only available if a feature is enabled. The set of enabled features can
   be selected using the keyword $(_c)features$(_d) when calling the pager.
@@ -90,7 +90,7 @@ $(_y)  :quit$(_d)
     Quit the pager.
 $(_c)    Keybindings: $(kb_quit)$(_d)
 $(_y)  :quit_eot$(_d)
-    This is an special quit action design for the $(_c)END OF TRANSMISSION (^D)$(_d)
+    This is a special quit action designed for the $(_c)END OF TRANSMISSION (^D)$(_d)
     keycode. If we are in a search operation, then it quits the search. If not, then it
     quits the pager.
 $(_c)    Keybindings: $(kb_quit_eot)$(_d)
@@ -163,7 +163,7 @@ $(_y)  :quit_search$(_d)
 $(_c)    Keybindings: $(kb_quit_search)$(_d)
 
 $(_b)                                       Freezing Data$(_d)
-$(_g)  These actions requires the feature :change_freeze.
+$(_g)  These actions require the feature :change_freeze.
 $(_y)  :change_freeze$(_d)
     Two values will be requested in the command line. The first is the number of columns and
     the second is the number of rows that will be frozen. If the value is equal or lower
@@ -175,7 +175,7 @@ $(_y)  :change_title_rows$(_d)
 $(_c)    Keybindings: $(kb_change_title_rows)$(_d)
 
 $(_b)                                        Visual Mode$(_d)
-$(_g)  These actions requires the feature :visual_mode.
+$(_g)  These actions require the feature :visual_mode.
 $(_y)  :toggle_visual_mode$(_d)
     Toggle visual mode, where a visual line is displayed on the screen. In this mode, the
     movements are slight modified to be relative to the visual line.

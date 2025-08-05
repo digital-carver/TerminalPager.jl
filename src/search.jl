@@ -30,7 +30,7 @@ function _change_active_match!(pagerd::Pager, forward::Bool = true)
     return nothing
 end
 
-# Find all matches of `regex` in the text of the pager `pager`. The vector with the matches
+# Find all matches of `regex` in the text of the pager `pagerd`. The vector with the matches
 # will be written to `pagerd`.
 function _find_matches!(pagerd::Pager, regex::Regex)
     pagerd.search_matches = string_search_per_line(pagerd.lines, regex)
@@ -113,7 +113,7 @@ function _move_view_to_match!(pagerd::Pager)
         start_row = (hl_line + 1) - (rows - frozen_rows)
     end
 
-    # If the highlight is outsidde the title rows, we can move the view to display it.
+    # If the highlight is outside the title rows, we can move the view to display it.
     if title_rows < hl_line
         # Check if the highlight column is visible.
         if hl_col_beg < start_column
