@@ -30,7 +30,7 @@ Drop all preferences.
 # Examples
 
 ```julia
-julia> TerminalPager.drop_all_preference!()
+julia> TerminalPager.drop_all_preferences!()
 ```
 """
 function drop_all_preferences!()

@@ -19,8 +19,8 @@ using StringManipulation
 
 import Base: convert, string
 
-# The performance of TerminalPager.jl does not increase by a lot of optimizations that is
-# performed by the compiler. Hence, we disable then to improve compile time.
+# The performance of TerminalPager.jl does not benefit much from optimizations performed by
+# the compiler, so we disable them to improve compile time.
 if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
     @eval Base.Experimental.@optlevel 1
 end
@@ -98,7 +98,7 @@ Call the pager to show the output of the object `obj`.
 
 # Preferences
 
-The user can defined custom preferences using the function
+The user can define custom preferences using the function
 [`TerminalPager.set_preference!`](@ref). The available preferences are listed as follows:
 
 - `"active_search_decoration"`: `String` with the ANSI escape sequence to decorate the
@@ -130,7 +130,7 @@ end
 
 function pager(obj::AbstractString; kwargs...)
     # If we have a context key called `bypass_pager` with the value `true`, we must not call
-    # the pager because we are in the pager> REPL mode. Hence, we we call the pager, it
+    # the pager because we are in the pager> REPL mode. Hence, when we call the pager, it
     # locks the screen until the user types CTRL-D. For more information, see:
     #
     #   https://github.com/ronisbr/TerminalPager.jl/issues/40

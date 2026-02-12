@@ -203,7 +203,7 @@ end
 # must be the active REPL, and `input` is a string with the command.
 function _tp_mode_do_cmd(repl::REPL.AbstractREPL, input::String)
     if !isinteractive() && !PRINTED_REPL_WARNING[]
-        @warn "The parger mode is intended for interaction use only, and should not be used from scripts."
+        @warn "The pager mode is intended for interaction use only, and should not be used from scripts."
         PRINTED_REPL_WARNING[] = true
     end
 
@@ -308,7 +308,7 @@ end
 # Execute the actions when a command has been received in the REPL mode `pager help`. `repl`
 # must be the active REPL, and `input` is a string with the command.
 function _tp_help_mode_do_cmd(repl::REPL.AbstractREPL, input::String)
-    # We do not need to verify if we are in a interactive environment because this mode is
+    # We do not need to verify if we are in an interactive environment because this mode is
     # only accessible through pager mode, which already checks it.
     try
         # Create a buffer that will replace `stdout`.
